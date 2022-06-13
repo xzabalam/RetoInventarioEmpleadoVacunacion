@@ -17,6 +17,18 @@ Se debe crear una base de datos en postgress lamada *empleadoVacunaDB*.   Cuando
 ### Diagrama de base de datos
 ![Diagrama entidad relación](/recursos/DerEmpleadoVacuna.png)
 
+# Construcción y ejecución del aplicativo.
+Primero se debe clonar este proyecto en una carpeta local y compilarlo, siguiendo los siguientes comandos
+```bash
+git clone git@github.com:xzabalam/RetoInventarioEmpleadoVacunacion.git
+cd RetoInventarioEmpleadoVacunacion
+mvn clean install
+```
+Para deployar el aplicativo se debe importar el código a algún IDE de desarrollo como Eclipse o STS y que tenga instalado el plugins para Spring.  Cuando ya se haya importado el código, Se tiene que seleccionar sobre el nombre del proyecto con el botón derecho y seleccionar la opción Run as > Spring Boot app.
+![Deploy de app](recursos/Compilar.png)
+
+El aplicativo automáticamente creará un servidor de aplicaciones en el que se deployará el aplicativo.
+
 # Usuario Administrador
 Por defecto el aplicativo crea un usuario administrador, por lo que para saber el nombre de usuario del administrador se deberá consultar a la base de datos con la siguiente consulta
 ``` sql
