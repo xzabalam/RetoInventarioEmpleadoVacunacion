@@ -15,7 +15,7 @@ Se debe crear una base de datos en postgress lamada *empleadoVacunaDB*.   Cuando
 > contraseña: Carp3D13m
 
 ### Diagrama de base de datos
-![Diagrama entidad relación](/imagenes/DerEmpleadoVacuna.png)
+![Diagrama entidad relación](/recursos/DerEmpleadoVacuna.png)
 
 # Usuario Administrador
 Por defecto el aplicativo crea un usuario administrador, por lo que para saber el nombre de usuario del administrador se deberá consultar a la base de datos con la siguiente consulta
@@ -49,3 +49,14 @@ Para el filtrado de empleados se puede utilizar las siguientes queryParams:
   - localhost:8080/empleados?estadoVacunacion=VACUNADO&tipoVacuna=SPUTNIK&fechaDesde=1931-11-15
 - Se puede filtrar por VACUNADOS y por el tipo de vacuna y obtener los registrs desde una fecha en específico hasta una fecha en específico: 
   - localhost:8080/empleados?estadoVacunacion=VACUNADO&tipoVacuna=SPUTNIK&fechaDesde=1931-11-15&fechaHasta=1959-01-21
+
+# Colección para Postman
+En la carpeta recursos, se encuentra un archivo llamado *kruger.postman_collection.json* en el que se encuentra los ejemplos de uso del api rest, este archivo se lo debe importar al aplicativo [Postman](https://www.postman.com/)
+
+# Seguridades
+Todos los endpoints del Api Rest tienen autenticacion, por lo que se deberá configurar cada api rest con una autenticación básica, en los headers se debe añadir *Authorization: Basic YWExMzUyMDIyOmFhMTM1MjAyMg==* como se muestra en el siguiente ejemplo:
+```bash
+curl --location --request GET 'localhost:8080/empleados?estadoVacunacion=VACUNADO&tipoVacuna=SPUTNIK&fechaDesde=1931-11-15&fechaHasta=1959-01-21' \
+--header 'Authorization: Basic YWExMzUyMDIyOmFhMTM1MjAyMg==' \
+--header 'Cookie: JSESSIONID=54EAC21F451C5EB0FB0DA1C752F02F5C'
+```
