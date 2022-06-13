@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "51631cc5-a5b3-4cf9-9d66-f242eb637820",
+		"name": "kruger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18061"
+	},
+	"item": [
+		{
+			"name": "reto",
+			"item": [
+				{
+					"name": "empleado",
+					"item": [
+						{
+							"name": "create empleado",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "aa1352022",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "aa1352022",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{  \r\n  \"cedula\": \"0604052985\",\r\n  \"nombres\": \"Francisco Xavier\",\r\n  \"apellidos\": \"Zabala Miranda\",\r\n  \"email\": \"xzabalam@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/empleados",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"empleados"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update empleado",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "fxzm1352022",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "fxzm1352022",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cedula\": \"0604052985\",\r\n  \"nombres\": \"Francisco Xavier\",\r\n  \"apellidos\": \"Zabala Miranda\",\r\n  \"email\": \"xzabalam@gmail.com\",\r\n    \"fecha_nacimiento\": \"1983-07-12T00:00:00.000Z\",\r\n    \"celular\": \"0991426944\",\r\n    \"estadoVacunado\": \"VACUNADO\",\r\n    \"tipoVacuna\": \"PFIZER\",\r\n    \"fechaVacunacion\": \"2022-06-12T19:31:15.292Z\",\r\n    \"numeroDosis\": 3,\r\n    \"domicilio\": {\r\n        \"calle\": \"Marcos Jofre y Gabriel Onofre\",\r\n        \"numero\": \"N46-46\",\r\n        \"ciudad\": \"Quito\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/empleados/0604052985",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"empleados",
+										"0604052985"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create empleado Copy",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "aa1352022",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "aa1352022",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/empleados/0604052985",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"empleados",
+										"0604052985"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetEmpleados",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "aa1352022",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "aa1352022",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/empleados?estadoVacunacion=VACUNADO&tipoVacuna=SPUTNIK&fechaDesde=1931-11-15&fechaHasta=1959-01-21",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"empleados"
+									],
+									"query": [
+										{
+											"key": "estadoVacunacion",
+											"value": "VACUNADO"
+										},
+										{
+											"key": "tipoVacuna",
+											"value": "SPUTNIK"
+										},
+										{
+											"key": "fechaDesde",
+											"value": "1931-11-15"
+										},
+										{
+											"key": "fechaHasta",
+											"value": "1959-01-21"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetEmpleadoByCedula",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "fxzm1352022",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "fxzm1352022",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/empleados/0604052985",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"empleados",
+										"0604052985"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "usuario",
+					"item": [
+						{
+							"name": "GetUsernameByCedula",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "aa1352022",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "aa1352022",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/usuarios/username/0100000000",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usuarios",
+										"username",
+										"0100000000"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
